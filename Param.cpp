@@ -48,7 +48,7 @@ Param::Param() {
 	/* Algorithm parameters */
 	numTrainImagesPerEpoch = 8000;	// # of training images per epoch 
     numTrainImagesPerBatch = 1;   // # of training images per batch. It is 1 for SGD
-	totalNumEpochs = 2;	// Total number of epochs
+	totalNumEpochs = 4;	// Total number of epochs
 	interNumEpochs = 1;		// Internal number of epochs (print out the results every interNumEpochs)
 	nInput = 400;     // # of neurons in input layer
 	nHide = 100;      // # of neurons in hidden layer
