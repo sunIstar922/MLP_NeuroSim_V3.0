@@ -66,10 +66,10 @@ int main() {
 	ReadTestingDataFromFile("patch10000_test.txt", "label10000_test.txt");
 
 	/* Initialization of synaptic array from input to hidden layer */
-	arrayIH->Initialization<IdealDevice>();
+	//arrayIH->Initialization<IdealDevice>();
 	//arrayIH->Initialization<RealDevice>(); 
 	//arrayIH->Initialization<MeasuredDevice>();
-	//arrayIH->Initialization<SRAM>(param->numWeightBit);
+	arrayIH->Initialization<SRAM>(param->numWeightBit);
 	//arrayIH->Initialization<DigitalNVM>(param->numWeightBit,true);
 	//arrayIH->Initialization<HybridCell>(); // the 3T1C+2PCM cell
 	//arrayIH->Initialization<_2T1F>();
@@ -79,7 +79,7 @@ int main() {
 	arrayHO->Initialization<IdealDevice>();
 	//arrayHO->Initialization<RealDevice>();
 	//arrayHO->Initialization<MeasuredDevice>();
-	//arrayHO->Initialization<SRAM>(param->numWeightBit);
+	arrayHO->Initialization<SRAM>(param->numWeightBit);
 	//arrayHO->Initialization<DigitalNVM>(param->numWeightBit,true);
 	//arrayHO->Initialization<HybridCell>(); // the 3T1C+2PCM cell
 	//arrayHO->Initialization<_2T1F>();
