@@ -148,7 +148,7 @@ int main() {
             WeightTransfer_2T1F();
                 
 		//mywriteoutfile << i*param->interNumEpochs << ", " << (double)correct/param->numMnistTestImages*100 << endl;
-        mywriteoutfile << i*param->interNumEpochs << ", " << accuracy << ", " << readLatency << ", " << writeLatency << ", " << readEnergy << ", " << writeEnergy << endl;
+        mywriteoutfile << i*param->interNumEpochs << ", " << (double)correct/param->numMnistTestImages*100 << ", " << subArrayIH->readLatency + subArrayHO->readLatency << ", " << subArrayIH->writeLatency + subArrayHO->writeLatency << ", " << arrayIH->readEnergy + subArrayIH->readDynamicEnergy + arrayHO->readEnergy + subArrayHO->readDynamicEnergy << ", " << arrayIH->writeEnergy + subArrayIH->writeDynamicEnergy + arrayHO->writeEnergy + subArrayHO->writeDynamicEnergy << endl;
 		
 		printf("Accuracy at %d epochs is : %.2f%\n", i*param->interNumEpochs, (double)correct/param->numMnistTestImages*100);
 		/* Here the performance metrics of subArray also includes that of neuron peripheries (see Train.cpp and Test.cpp) */
